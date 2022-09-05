@@ -22,3 +22,4 @@ dev = [
 [tool.pdm.scripts]
 exif = {call = "add_exif:pdm_entry"}
 source = {call = "generate_js:pdm_entry"}
+merge = {call = "merge_data_json:pdm_entry"}
