@@ -1,0 +1,22 @@
+[project]
+name = "automate-brightwheel"
+version = "1.0.0"
+description = "Automate downloading photos from the Brightwheel site"
+authors = [
+    {name = "Bryan Weber", email = "bryan.w.weber@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipython>=8.4.0",
+    "flake8>=5.0.4",
+    "black>=22.6.0",
+]
+
+[tool.pdm.scripts]
+eleanor = {call = "add_exif:main('Eleanor')"}
+audrey = {call = "add_exif:main('Audrey')"}
