@@ -18,6 +18,8 @@ ARGS = [
     f'-GPSLongitudeRef="{long_ref}"',
 ]
 
+HERE = Path(__file__).parent
+
 
 def pdm_entry():
     import sys
@@ -27,9 +29,10 @@ def pdm_entry():
 
 
 def main(girl: str) -> None:
-    if girl not in ("Eleanor", "Audrey"):
+    girl = girl.lower()
+    if girl not in ("eleanor", "audrey"):
         raise RuntimeError("Specify one of 'Eleanor' or 'Audrey'")
-    folder_path = Path.home() / "Documents" / f"{girl} Brightwheel"
+    folder_path = HERE / "photos" / girl
     data = json.loads((folder_path / "data.json").read_text())
     data = {d["identifier"]: d for d in data}
     for jpeg in folder_path.glob("*.jpg"):
