@@ -5,7 +5,9 @@ description = "Automate downloading photos from the Brightwheel site"
 authors = [
     {name = "Bryan Weber", email = "bryan.w.weber@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "jmespath>=1.0.1",
+]
 requires-python = ">=3.9"
 license = {text = "MIT"}
 
@@ -18,5 +20,5 @@ dev = [
 ]
 
 [tool.pdm.scripts]
-eleanor = {call = "add_exif:main('Eleanor')"}
-audrey = {call = "add_exif:main('Audrey')"}
+exif = {call = "add_exif:pdm_entry"}
+source = {call = "generate_js:pdm_entry"}

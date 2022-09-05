@@ -19,6 +19,13 @@ ARGS = [
 ]
 
 
+def pdm_entry():
+    import sys
+    if len(sys.argv) != 2:
+        raise RuntimeError("Must supply one name")
+    main(sys.argv[1])
+
+
 def main(girl: str) -> None:
     if girl not in ("Eleanor", "Audrey"):
         raise RuntimeError("Specify one of 'Eleanor' or 'Audrey'")
