@@ -10,7 +10,7 @@ long = " ".join(map(str, (71.0, 22.0, 58.6596)))
 long_ref = "W"
 
 ARGS = [
-    "Image-ExifTool-12.44/exiftool",
+    "exiftool/exiftool",
     "-overwrite_original",
     f'-GPSLatitude="{lat}"',
     f'-GPSLongitude="{long}"',

@@ -1,3 +1,5 @@
 [submodule "exiftool"]
 	path = exiftool
 	url = https://github.com/exiftool/exiftool
+[submodule "exiftools"]
+	branch = master
