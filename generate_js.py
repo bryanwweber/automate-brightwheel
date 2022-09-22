@@ -84,7 +84,7 @@ const callback = (mutationList, observer) => {
     while ((endCallback - startCallback) < 5000) {
         endCallback = Date.now();
     }
-    if (more && more.isVisible()) {
+    if (more && more.checkVisibility()) {
         more.click();
     }
 };
@@ -92,7 +92,7 @@ const callback = (mutationList, observer) => {
 
 forceDownload = """\
 function forceDownload(blob, filename) {
-    var a = document.createElement('a');
+    let a = document.createElement('a');
     a.download = filename;
     a.href = blob;
     // For Firefox https://stackoverflow.com/a/32226068
@@ -104,8 +104,8 @@ function forceDownload(blob, filename) {
 
 downloadJson = """\
 function downloadJson(content, fileName, contentType) {
-    var a = document.createElement("a");
-    var file = new Blob([content], {type: contentType});
+    let a = document.createElement("a");
+    let file = new Blob([content], {type: contentType});
     a.href = URL.createObjectURL(file);
     a.download = fileName;
     a.click();
@@ -171,6 +171,11 @@ function getPhoto(node) {
     for (const n of node.children) {
         if (n.className.includes("dayLabel")) {
             date = n.childNodes[0].nodeValue;
+            if (date.includes("Today")) {
+                date = `$${today.getMonth() + 1}/$${today.getDate()}/$${today.getFullYear()}`;
+            } else if (date.includes("Yesterday")) {
+                date = `$${yesterday.getMonth() + 1}/$${yesterday.getDate()}/$${yesterday.getFullYear()}`;
+            }
             if (date == "$last_date_seen") {
                 observer.disconnect();
                 return true;
