@@ -145,7 +145,7 @@ const config = { childList: true, subtree: false };
 const observer = new MutationObserver(callback);
 const targetNode = document.querySelector("div.StudentFeed");
 observer.observe(targetNode, config);
-var more = targetNode.querySelector("div[class^='frontend']").firstChild;
+var more = targetNode.querySelector("div[class^='frontend-fiv0z2']").firstChild;
 var shouldBreak = false;
 """
 

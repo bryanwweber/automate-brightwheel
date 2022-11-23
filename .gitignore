@@ -3,3 +3,4 @@ __pycache__
 .venv/
 .vim/
 photos/**/*.jpg
+.pdm.toml
