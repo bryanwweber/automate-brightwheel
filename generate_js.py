@@ -166,7 +166,8 @@ function finish() {
 }
 """
 
-getPhoto = Template("""\
+getPhoto = Template(
+    """\
 function getPhoto(node) {
     for (const n of node.children) {
         if (n.className.includes("dayLabel")) {
@@ -195,4 +196,5 @@ function getPhoto(node) {
     }
     return false;
 }
-""")
+"""
+)

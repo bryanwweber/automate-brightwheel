@@ -1,25 +1,18 @@
+# Name and version must be blank so the project isn't installed.
 [project]
-name = "automate-brightwheel"
-version = "1.0.0"
+name = ""
+version = ""
 description = "Automate downloading photos from the Brightwheel site"
-authors = [
-    {name = "Bryan Weber", email = "bryan.w.weber@gmail.com"},
-]
-dependencies = [
-    "jmespath>=1.0.1",
-]
+authors = [{ name = "Bryan Weber", email = "bryan.w.weber@gmail.com" }]
+dependencies = ["jmespath>=1.0.1"]
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [tool.pdm]
 [tool.pdm.dev-dependencies]
-dev = [
-    "ipython>=8.4.0",
-    "flake8>=5.0.4",
-    "black>=22.6.0",
-]
+dev = ["ipython>=8.4.0", "black>=22.6.0", "ruff>=0.0.287"]
 
 [tool.pdm.scripts]
-exif = {call = "add_exif:pdm_entry"}
-source = {call = "generate_js:pdm_entry"}
-merge = {call = "merge_data_json:pdm_entry"}
+exif = { call = "add_exif:pdm_entry" }
+source = { call = "generate_js:pdm_entry" }
+merge = { call = "merge_data_json:pdm_entry" }
