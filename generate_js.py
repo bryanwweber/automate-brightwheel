@@ -54,6 +54,7 @@ function go() {
         shouldBreak = getPhoto(node);
         if (shouldBreak) {
             more = null;
+            console.log("Finished downloading; run finish()");
             break;
         }
     }
