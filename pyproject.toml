@@ -1,7 +1,5 @@
 # Name and version must be blank so the project isn't installed.
 [project]
-name = ""
-version = ""
 description = "Automate downloading photos from the Brightwheel site"
 authors = [{ name = "Bryan Weber", email = "bryan.w.weber@gmail.com" }]
 dependencies = ["jmespath>=1.0.1"]
@@ -10,7 +8,7 @@ license = { text = "MIT" }
 
 [tool.pdm]
 [tool.pdm.dev-dependencies]
-dev = ["ipython>=8.4.0", "black>=22.6.0", "ruff>=0.0.287"]
+dev = ["ipython>=8.4.0", "ruff>=0.0.287"]
 
 [tool.pdm.scripts]
 exif = { call = "add_exif:pdm_entry" }

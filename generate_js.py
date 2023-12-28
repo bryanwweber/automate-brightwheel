@@ -180,6 +180,7 @@ function getPhoto(node) {
             }
             if (date == "$last_date_seen") {
                 observer.disconnect();
+                console.log("All done, now run finish()");
                 return true;
             }
         } else if (n.className.includes("card-module-card")) {
