@@ -60,11 +60,13 @@ Upload the modified files to Google Photos and add them to the Brightwheel share
 
 ## Initial (new machine) setup
 
-Install [pdm]. Then run
+Install [mise]. Then run
 
 ```shell
+python -m venv .venv
 pdm install
 ```
 
 [brightwheel]: https://mybrightwheel.com
 [pdm]: https://pdm.fming.dev/latest/usage/hooks/
+[mise]: https://mise.jdx.dev
