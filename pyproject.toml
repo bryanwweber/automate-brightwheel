@@ -1,14 +1,18 @@
-# Name and version must be blank so the project isn't installed.
 [project]
-description = "Automate downloading photos from the Brightwheel site"
+description = "Default template for PDM package"
 authors = [{ name = "Bryan Weber", email = "bryan.w.weber@gmail.com" }]
 dependencies = ["jmespath>=1.0.1"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
+name = "automate-brightwheel"
+version = "2024.01.0"
+readme = "README.md"
 
 [tool.pdm]
+distribution = false
+
 [tool.pdm.dev-dependencies]
-dev = ["ipython>=8.4.0", "ruff>=0.0.287"]
+dev = ["ipython>=8.18.1", "ruff>=0.1.14"]
 
 [tool.pdm.scripts]
 exif = { call = "add_exif:pdm_entry" }

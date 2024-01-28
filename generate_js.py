@@ -186,8 +186,9 @@ function getPhoto(node) {
         } else if (n.className.includes("card-module-card")) {
             time = n.querySelector("span[class^='activity-card-module-date']").firstChild.textContent;
             content = n.querySelector("div[class^='activity-card-module-content']");
-            href = content.getElementsByTagName('a')[0].href;
-            identifier = href.split("?")[0].split("/").at(-1);
+            href = content.getElementsByTagName('img')[0].src;
+            identifier = new URL(href).pathname;
+            identifier = decodeURIComponent(identifier).split("/").slice(-1)[0];
             caption = content.querySelector("p[class^='activity-card-module-text']")?.textContent;
             if (caption === undefined) {
                 caption = ""
