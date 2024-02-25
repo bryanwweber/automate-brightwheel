@@ -6,6 +6,7 @@ HERE = Path(__file__).parent
 
 def pdm_entry() -> None:
     import sys
+
     if len(sys.argv) != 2:
         raise RuntimeError("Pass one argument")
     main(sys.argv[1])

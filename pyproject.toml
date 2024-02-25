@@ -1,7 +1,9 @@
 [project]
 description = "Default template for PDM package"
 authors = [{ name = "Bryan Weber", email = "bryan.w.weber@gmail.com" }]
-dependencies = ["jmespath>=1.0.1"]
+dependencies = [
+    "jmespath>=1.0.1",
+]
 requires-python = ">=3.10"
 license = { text = "MIT" }
 name = "automate-brightwheel"
@@ -12,7 +14,10 @@ readme = "README.md"
 distribution = false
 
 [tool.pdm.dev-dependencies]
-dev = ["ipython>=8.18.1", "ruff>=0.1.14"]
+dev = [
+    "ipython>=8.22.1",
+    "ruff>=0.2.2",
+]
 
 [tool.pdm.scripts]
 exif = { call = "add_exif:pdm_entry" }

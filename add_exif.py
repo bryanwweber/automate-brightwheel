@@ -23,6 +23,7 @@ HERE = Path(__file__).parent
 
 def pdm_entry():
     import sys
+
     if len(sys.argv) != 2:
         raise RuntimeError("Must supply one name")
     main(sys.argv[1])
