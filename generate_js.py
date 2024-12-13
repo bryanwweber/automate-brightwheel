@@ -1,12 +1,17 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "jmespath",
+# ]
+# ///
 import json
-from pathlib import Path
-from datetime import datetime
-from string import Template
 from base64 import standard_b64encode
+from datetime import datetime
+from pathlib import Path
+from string import Template
 from subprocess import run
 
 import jmespath
-
 
 HERE = Path(__file__).parent
 
@@ -201,3 +206,9 @@ function getPhoto(node) {
 }
 """
 )
+
+if __name__ == "__main__":
+    import sys
+
+    output = standard_b64encode(main(sys.argv[-1]).encode("utf-8")).decode()
+    run(["printf", f'"\\e]52;c;{output}\\e\\\\"'])

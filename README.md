@@ -11,7 +11,7 @@ Go to [brightwheel] and log in. Choose one of the kids, then the "Feed" link at 
 Run
 
 ```shell
-pdm run source <name>
+task source NAME=<name>
 ```
 
 where `<name>` is either `eleanor` or `audrey`, case insensitive. This will print the generated js source to the terminal and hopefully also copy it to the system clipboard.
@@ -41,7 +41,7 @@ Move the pictures from the `Downloads` folder to `./photos/<name>`. Move the `da
 Merge the existing and new `data.json` files with
 
 ```shell
-pdm run merge <name>
+task merge NAME=<name>
 ```
 
 Then delete the `data.json` file in the root.
@@ -51,7 +51,7 @@ Then delete the `data.json` file in the root.
 Edit the EXIF data of the photos with
 
 ```shell
-pdm run exif <name>
+task exif NAME=<name>
 ```
 
 ## Step 7
@@ -63,10 +63,8 @@ Upload the modified files to Google Photos and add them to the Brightwheel share
 Install [mise]. Then run
 
 ```shell
-python -m venv .venv
-pdm install
+mise install
 ```
 
 [brightwheel]: https://mybrightwheel.com
-[pdm]: https://pdm.fming.dev/latest/usage/hooks/
 [mise]: https://mise.jdx.dev

@@ -1,8 +1,9 @@
-from pathlib import Path
 import json
-from datetime import datetime
-from subprocess import run
+import sys
 from copy import copy
+from datetime import datetime
+from pathlib import Path
+from subprocess import run
 
 lat = " ".join(map(str, (41.0, 50.0, 47.6052)))
 lat_ref = "N"
@@ -19,14 +20,6 @@ ARGS = [
 ]
 
 HERE = Path(__file__).parent
-
-
-def pdm_entry():
-    import sys
-
-    if len(sys.argv) != 2:
-        raise RuntimeError("Must supply one name")
-    main(sys.argv[1])
 
 
 def main(girl: str) -> None:
@@ -69,8 +62,6 @@ def main(girl: str) -> None:
 
 
 if __name__ == "__main__":
-    import sys
-
     if len(sys.argv) != 2:
         raise RuntimeError("Must supply one name")
     main(sys.argv[1])

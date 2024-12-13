@@ -1,0 +1,23 @@
+version: "3"
+
+vars:
+  NAME: "{{ .NAME }}"
+
+tasks:
+  source:
+    cmds:
+      - uv run generate_js.py {{ .NAME }}
+  add_exif:
+    cmds:
+      - uv run add_exif.py {{ .NAME }}
+  merge_json:
+    cmds:
+      - uv run merge_data_json.py {{ .NAME }}
+  format:
+    cmds:
+      - uvx ruff format .
+      - uvx ruff check --fix .
+  lint:
+    cmds:
+      - uvx ruff check .
+      - uvx ruff format --check .
