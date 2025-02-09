@@ -41,7 +41,7 @@ Move the pictures from the `Downloads` folder to `./photos/<name>`. Move the `da
 Merge the existing and new `data.json` files with
 
 ```shell
-task merge NAME=<name>
+task merge_json NAME=<name>
 ```
 
 Then delete the `data.json` file in the root.
@@ -51,7 +51,7 @@ Then delete the `data.json` file in the root.
 Edit the EXIF data of the photos with
 
 ```shell
-task exif NAME=<name>
+task add_exif NAME=<name>
 ```
 
 ## Step 7
