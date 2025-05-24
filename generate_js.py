@@ -25,12 +25,12 @@ def pdm_entry() -> None:
     run(["printf", f'"\\e]52;c;{output}\\e\\\\"'])
 
 
-def main(girl: str) -> str:
-    girl = girl.lower()
-    if girl not in ("eleanor", "audrey"):
-        raise RuntimeError("Girl must be one of 'Eleanor' or 'Audrey'")
+def main(kiddo: str) -> str:
+    kiddo = kiddo.lower()
+    if kiddo not in ("eleanor", "audrey", "leland"):
+        raise RuntimeError("Kiddo must be one of 'Eleanor', 'Audrey', or 'Leland'")
 
-    data = json.loads((HERE / "photos" / girl / "data.json").read_text())
+    data = json.loads((HERE / "photos" / kiddo / "data.json").read_text())
     datetimes = jmespath.search("[*].datetime", data)
     last_dt_seen = sorted(datetime.fromisoformat(dt[:-1]) for dt in datetimes)[-1]
     last_date_seen = last_dt_seen.strftime("%m/%d/%Y")

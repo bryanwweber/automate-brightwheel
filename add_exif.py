@@ -22,11 +22,11 @@ ARGS = [
 HERE = Path(__file__).parent
 
 
-def main(girl: str) -> None:
-    girl = girl.lower()
-    if girl not in ("eleanor", "audrey"):
-        raise RuntimeError("Specify one of 'Eleanor' or 'Audrey'")
-    folder_path = HERE / "photos" / girl
+def main(kiddo: str) -> None:
+    kiddo = kiddo.lower()
+    if kiddo not in ("eleanor", "audrey", "leland"):
+        raise RuntimeError("Kiddo must be one of 'Eleanor', 'Audrey', or 'Leland'")
+    folder_path = HERE / "photos" / kiddo
     data = json.loads((folder_path / "data.json").read_text())
     data = {d["identifier"]: d for d in data}
     for jpeg in folder_path.glob("*.jpg"):
